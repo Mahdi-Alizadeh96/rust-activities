@@ -9,4 +9,12 @@
 // * Use an if..else if..else block to determine which message to display
 // * Use the println macro to display messages to the terminal
 
-fn main() {}
+fn main() {
+
+    let num: i32 = 5;
+
+    let result : &str = if num > 5 { ">5" } else if num == 5 { "=5" } else { "<5" };
+
+    println!("{}", result);
+
+}

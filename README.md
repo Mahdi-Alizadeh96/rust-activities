@@ -10,6 +10,10 @@ Displays your first and last name
 
 Displays the result of the sum of two numbers
 
-### Activity 3 - Flow control using if..else
+### Activity 3 - Flow control using if..else (part a)
 
 Displays a message based on the value of a boolean variable
+
+### Activity 3 - Flow control using if..else (part b)
+
+Display ">5", "<5", or "=5" based on the value of a variable
