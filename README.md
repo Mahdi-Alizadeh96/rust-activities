@@ -18,3 +18,4 @@
 ### Activity 4 - Decision making with match
 
 - a. Display "it's true" or "it's false" based on the value of a variable
+- b. Display "one", "two", "three", or "other" based on whether the value of a variable is 1, 2, 3, or some other number, respectively
