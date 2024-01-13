@@ -23,3 +23,7 @@
 ### Activity 5 - Basic arithmetic
 
 - Display "1" through "4" in the terminal
+
+### Activity 6 - Looping using the while statement
+
+- Counts down from 5 to 1, displays the countdown in the terminal, then prints "done!" when complete.
