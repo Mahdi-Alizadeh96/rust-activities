@@ -39,5 +39,4 @@ fn main() {
 
     print_drink(my_drink);
 
-
 }

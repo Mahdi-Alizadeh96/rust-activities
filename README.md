@@ -35,3 +35,7 @@
 ### Activity 8 - Organizing similar data using structs
 
 - Print the flavor of a drink and it's fluid ounces
+
+### Activity 9 - Data management using tuples
+
+- Print whether the y-value of a cartesian coordinate is greater than 5, less than 5, or equal to 5
