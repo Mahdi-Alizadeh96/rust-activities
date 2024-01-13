@@ -27,3 +27,7 @@
 ### Activity 6 - Looping using the while statement
 
 - Counts down from 5 to 1, displays the countdown in the terminal, then prints "done!" when complete.
+
+### Activity 7 - Working with an enum
+
+- Prints the name of a color to the terminal
