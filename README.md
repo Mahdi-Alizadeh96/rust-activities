@@ -31,3 +31,7 @@
 ### Activity 7 - Working with an enum
 
 - Prints the name of a color to the terminal
+
+### Activity 8 - Organizing similar data using structs
+
+- Print the flavor of a drink and it's fluid ounces
