@@ -39,3 +39,7 @@
 ### Activity 9 - Data management using tuples
 
 - Print whether the y-value of a cartesian coordinate is greater than 5, less than 5, or equal to 5
+
+### Activity 10 - Working with expressions
+
+- Print "its big" if a variable is > 100 / Print "its small" if a variable is <= 100

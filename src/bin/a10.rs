@@ -12,4 +12,19 @@
 // * Use a match expression to determine which message
 //   to print
 
-fn main() {}
+fn print_expression (var : bool) {
+
+    match var {
+        true => println!("its big"),
+        false => println!("its small")
+    };
+
+}
+
+fn main() {
+
+    let num: i32 = 110;
+
+    print_expression(num > 100);
+
+}
