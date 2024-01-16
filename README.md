@@ -43,3 +43,7 @@
 ### Activity 10 - Working with expressions
 
 - Print "its big" if a variable is > 100 / Print "its small" if a variable is <= 100
+
+### Activity 11 - Ownership
+
+- Print out the quantity and id number of a grocery item
