@@ -47,3 +47,7 @@
 ### Activity 11 - Ownership
 
 - Print out the quantity and id number of a grocery item
+
+### Activity 12 - Implementing functionality with the impl keyword
+
+- Print the characteristics of a shipping box Must include dimensions, weight, and color
