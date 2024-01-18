@@ -55,3 +55,7 @@
 ### Activity 13 - Vectors
 
 - Print 10, 20, "thirty", and 40 in a loop Print the total number of elements in a vector
+
+### Activity 14 - Strings
+
+- Print out the name and favorite colors of people aged 10 and under
