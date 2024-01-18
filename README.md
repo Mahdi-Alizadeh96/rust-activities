@@ -51,3 +51,7 @@
 ### Activity 12 - Implementing functionality with the impl keyword
 
 - Print the characteristics of a shipping box Must include dimensions, weight, and color
+
+### Activity 13 - Vectors
+
+- Print 10, 20, "thirty", and 40 in a loop Print the total number of elements in a vector
