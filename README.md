@@ -59,3 +59,10 @@
 ### Activity 14 - Strings
 
 - Print out the name and favorite colors of people aged 10 and under
+
+### Activity 15 - Advanced match
+
+- Print out a list of tickets and their information for an event
+- Tickets can be Backstage, Vip, and Standard
+- Backstage and Vip tickets include the ticket holder's name
+- All tickets include the price
