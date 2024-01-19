@@ -75,3 +75,8 @@
 ### Activity 17 - Browsing standard library documentation
 
 - Print a string in lowercase and uppercase
+
+### Activity 18 - Result
+
+- a. Determine if a customer is able to make a restricted purchase
+- a. Restricted purchases require that the age of the customer is at least 21
