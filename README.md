@@ -66,3 +66,8 @@
 - Tickets can be Backstage, Vip, and Standard
 - Backstage and Vip tickets include the ticket holder's name
 - All tickets include the price
+
+### Activity 16 - Option
+
+- Print out the details of a student's locker assignment
+- Lockers use numbers and are optional for students

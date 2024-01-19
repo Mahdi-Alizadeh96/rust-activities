@@ -8,7 +8,21 @@
 // * Use a struct containing the student's name and locker assignment
 // * The locker assignment should use an Option<i32>
 
-// * Use a struct containing the student's name and locker assignment
-// * The locker assignment should use an Option<i32>
+struct Student {
+    name : String,
+    locker_assignment : Option<i32>
+}
 
-fn main() {}
+fn main() {
+
+    let student: Student = Student {
+        name : "Samuel".to_owned(),
+        locker_assignment : None
+    };
+
+    match student.locker_assignment {
+        Some(code) => println!("Code for : {} is : {}", student.name, code),
+        None => println!("No Code for : {}", student.name)
+    }
+
+}
