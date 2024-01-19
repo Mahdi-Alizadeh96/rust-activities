@@ -71,3 +71,7 @@
 
 - Print out the details of a student's locker assignment
 - Lockers use numbers and are optional for students
+
+### Activity 17 - Browsing standard library documentation
+
+- Print a string in lowercase and uppercase
