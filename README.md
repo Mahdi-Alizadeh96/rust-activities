@@ -76,7 +76,19 @@
 
 - Print a string in lowercase and uppercase
 
-### Activity 18 - Result
+### Activity 18 - Result & the question mark operator
 
-- a. Determine if a customer is able to make a restricted purchase
-- a. Restricted purchases require that the age of the customer is at least 21
+- a.
+    - Determine if a customer is able to make a restricted purchase
+    - Restricted purchases require that the age of the customer is at least 21
+- b.
+    - Determine if an employee can access a building using a digital keycard
+    - Employees that can access the building are:
+        - Maintenance crews
+        - Marketing department employees
+        - Managers
+    - Other employees that work at the company are:
+        - Line supervisors
+        - Kitchen staff
+        - Assembly technicians
+    - Ensure that terminated employees cannot access the building regardless of their position
