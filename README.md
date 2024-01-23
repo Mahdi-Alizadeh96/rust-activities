@@ -1,6 +1,6 @@
 # Rust Activities (zero to mastery)
 
-## [Rust Programming: The Complete Developer's Guide](https://zerotomastery.io/courses/learn-rust/)
+## [Rust Programming: The Complete Developer's Guide](https:-rotomastery.io/courses/learn-rust/)
 ---
 ### Activity 1 - Functions
 
@@ -104,3 +104,16 @@
     - 2 Tables
     - 0 Couches
 - Print the total number of items in stock
+
+### Activity 20 - User input
+
+- Verify user input against pre-defined keywords
+- The keywords represent possible power options for a computer:
+    - Off
+    - Sleep
+    - Reboot
+    - Shutdown
+    - Hibernate
+- If the user enters one of the keywords, a message should be printed to the console indicating which action will be taken
+    - Example: If the user types in "shutdown" a message should display such as "shutting down"
+- If the keyword entered does not exist, an appropriate error message should be displayed

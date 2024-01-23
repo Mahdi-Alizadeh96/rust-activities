@@ -23,4 +23,49 @@
 // * The program should be case-insensitive (the user should be able to type
 //   Reboot, reboot, REBOOT, etc.)
 
-fn main() {}
+enum PowerOptions {
+    Off,
+    Sleep,
+    Reboot,
+    Shutdown,
+    Hibernate
+}
+
+fn power_message(value : PowerOptions) -> &'static str {
+
+    let message = match value {
+        PowerOptions::Hibernate => "Hibernating",
+        PowerOptions::Shutdown => "Shuting down",
+        PowerOptions::Reboot => "Rebooting",
+        PowerOptions::Sleep => "Going to sleep",
+        PowerOptions::Off => "Off"
+    };
+
+    return message;
+
+}
+
+fn user_input_convertor(input : &str ) -> Option<PowerOptions> {
+
+    let result = match input.to_lowercase().as_str() {
+        "off" => Some(PowerOptions::Off),
+        "sleep" => Some(PowerOptions::Sleep),
+        "reboot" => Some(PowerOptions::Reboot),
+        "shutdown" => Some(PowerOptions::Shutdown),
+        "hibernate" => Some(PowerOptions::Hibernate),
+        _ => None
+    };
+
+    return result;
+
+}
+
+fn main() {
+
+    let input  = "reBoot";
+
+    let converting = user_input_convertor(input).map(|value| power_message(value));
+
+    println!("{:?}", converting);
+
+}
