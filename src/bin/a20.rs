@@ -64,8 +64,7 @@ fn main() {
 
     let input  = "reBoot";
 
-    let converting = user_input_convertor(input).map(|value| power_message(value));
-
-    println!("{:?}", converting);
+    user_input_convertor(input) .map(|value| power_message(value))
+                                .map(|value| println!("{}", value));
 
 }
