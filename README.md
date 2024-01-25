@@ -117,3 +117,7 @@
 - If the user enters one of the keywords, a message should be printed to the console indicating which action will be taken
     - Example: If the user types in "shutdown" a message should display such as "shutting down"
 - If the keyword entered does not exist, an appropriate error message should be displayed
+
+### Activity 21 - Map combinator
+
+- Given a user name, create and print out a User struct if the user exists
