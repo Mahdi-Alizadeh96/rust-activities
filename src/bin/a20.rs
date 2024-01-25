@@ -64,7 +64,11 @@ fn main() {
 
     let input  = "reBoot";
 
-    user_input_convertor(input) .map(|value| power_message(value))
-                                .map(|value| println!("{}", value));
+    let check_input = user_input_convertor(input).map(|value| power_message(value));
+
+    match check_input {
+        Some(input) => println!("{}", input),
+        _ => println!("command {} not found", input)
+    };
 
 }
