@@ -125,3 +125,7 @@
 ### Activity 22 - Testing
 
 - Write tests for the existing program to ensure proper functionality
+
+### Activity 23 - Option combinators
+
+- Use combinators as described in the functions: part_1, part_2, and part_3
