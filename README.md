@@ -121,3 +121,7 @@
 ### Activity 21 - Map combinator
 
 - Given a user name, create and print out a User struct if the user exists
+
+### Activity 22 - Testing
+
+- Write tests for the existing program to ensure proper functionality
