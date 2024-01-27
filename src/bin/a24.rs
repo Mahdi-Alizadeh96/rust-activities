@@ -9,5 +9,19 @@
 // * Use an iterator chain to accomplish the task.
 
 fn main() {
+
     let data = vec![1, 2, 3, 4, 5];
+
+    let new_data : Vec<i32> = data
+                                    .iter()
+                                    .map(| item | item *3)
+                                    .filter(|item| item > &10)
+                                    .collect();
+
+    for item in new_data {
+        
+        println!("{:?}", item);
+
+    };
+
 }

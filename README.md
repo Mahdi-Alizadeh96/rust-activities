@@ -129,3 +129,9 @@
 ### Activity 23 - Option combinators
 
 - Use combinators as described in the functions: part_1, part_2, and part_3
+
+### Activity 24 - Iterator
+
+- Triple the value of each item in a vector.
+- Filter the data to only include values > 10.
+- Print out each element using a for loop.
