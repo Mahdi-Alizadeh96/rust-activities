@@ -135,3 +135,9 @@
 - Triple the value of each item in a vector.
 - Filter the data to only include values > 10.
 - Print out each element using a for loop.
+
+### Activity 26 - Modules
+
+- a.
+- b.
+    -  The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple modules.
