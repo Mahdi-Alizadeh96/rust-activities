@@ -38,7 +38,7 @@ fn concat(first: &str, second: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use crate::*;
 
     #[test]
     fn test_clamp_within_range() {
