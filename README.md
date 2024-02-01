@@ -138,6 +138,7 @@
 
 ### Activity 26 - Modules
 
-- a.
-- b.
+- a. External crates
+    - Display the current date and time
+- b. Inline Modules
     -  The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple modules.
