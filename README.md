@@ -142,3 +142,5 @@
     - Display the current date and time
 - b. Inline Modules
     -  The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple modules.
+- c. External Modules
+    - The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple external modules.

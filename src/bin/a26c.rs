@@ -16,38 +16,14 @@
 // * After moving the functions into modules, try running
 //   `cargo check --bin a26c` to get a listing of required code changes
 
-fn trim(msg: &str) -> &str {
-    msg.trim()
-}
-
-fn capitalize(msg: &str) -> std::borrow::Cow<'_, str> {
-    if let Some(letter) = msg.get(0..1) {
-        format!("{}{}", letter.to_uppercase(), &msg[1..msg.len()]).into()
-    } else {
-        msg.into()
-    }
-}
-
-fn exciting(msg: &str) -> String {
-    format!("{}!", msg)
-}
-
-fn add(lhs: isize, rhs: isize) -> isize {
-    lhs + rhs
-}
-fn sub(lhs: isize, rhs: isize) -> isize {
-    lhs - rhs
-}
-fn mul(lhs: isize, rhs: isize) -> isize {
-    lhs * rhs
-}
+use a26c_modules::*;
 
 fn main() {
     // Part 1: math functions
     let result = {
-        let two_plus_two = add(2, 2);
-        let three = sub(two_plus_two, 1);
-        mul(three, three)
+        let two_plus_two =  math_functions::add(2, 2);
+        let three = math_functions::sub(two_plus_two, 1);
+        math_functions::mul(three, three)
     };
 
     // Ensure we have a correct result.
@@ -57,12 +33,12 @@ fn main() {
     // Part 2: string functions
     let hello = {
         let msg = "hello ";
-        let msg = trim(msg);
-        capitalize(msg)
+        let msg = string_formatting::trim(msg);
+        string_formatting::capitalize(msg)
     };
     let world = {
         let msg = "world";
-        exciting(msg)
+        string_formatting::exciting(msg)
     };
     let msg = format!("{}, {}", hello, world);
 
