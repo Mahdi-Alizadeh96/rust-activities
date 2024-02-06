@@ -23,6 +23,8 @@
 // * The program should be case-insensitive (the user should be able to type
 //   Reboot, reboot, REBOOT, etc.)
 
+use std::io;
+
 enum PowerOptions {
     Off,
     Sleep,
@@ -60,15 +62,27 @@ fn user_input_convertor(input : &str ) -> Option<PowerOptions> {
 
 }
 
+fn get_input() -> io::Result<String> {
+
+    let mut input  = String::new();
+    io::stdin().read_line(&mut input)?;
+
+    Ok(input.trim().to_owned())
+
+}
+
 fn main() {
 
-    let input  = "reBoot";
-
-    let check_input = user_input_convertor(input).map(|value| power_message(value));
-
-    match check_input {
-        Some(input) => println!("{}", input),
-        _ => println!("command {} not found", input)
-    };
+    match get_input() {
+        Ok(input) => {
+            let check_input = user_input_convertor(input.as_str()).map(|value| power_message(value));
+        
+            match check_input {
+                Some(input) => println!("{}", input),
+                _ => println!("command {} not found", input)
+            };
+        }
+        _ => ()
+    }
 
 }
