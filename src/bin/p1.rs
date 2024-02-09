@@ -29,4 +29,51 @@
 // * A vector is the easiest way to store the bills at stage 1, but a
 //   hashmap will be easier to work with at stages 2 and 3.
 
-fn main() {}
+use std::io;
+
+enum Menu {
+    AddBill,
+    // ViewBill,
+    // RemoveBill,
+    // UpdateBill,
+    // BillTotal,
+    // Exit
+}
+
+struct Bill {
+    name : String,
+    amount : i32
+}
+
+fn add_bill() {
+
+    let mut bills: Vec<Bill> = vec![];
+
+    let new_bill = Bill {
+        name : "".to_owned(),
+        amount : 0
+    };
+
+    io::stdin().read_line(&mut new_bill.name);
+
+    io::stdin().read_line(new_bill.amount);
+
+    bills.push(new_bill);
+
+    // bills
+
+}
+
+fn user_input(menu_number: u32) -> Menu {
+
+    match menu_number {
+        1 => add_bill()
+    }
+
+}
+
+fn main() {
+
+
+
+}
