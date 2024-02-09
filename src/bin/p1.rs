@@ -32,7 +32,7 @@
 use std::io;
 
 enum Menu {
-    AddBill,
+    AddBill(),
     // ViewBill,
     // RemoveBill,
     // UpdateBill,
@@ -49,31 +49,56 @@ fn add_bill() {
 
     let mut bills: Vec<Bill> = vec![];
 
-    let new_bill = Bill {
+    let mut new_bill = Bill {
         name : "".to_owned(),
         amount : 0
     };
 
-    io::stdin().read_line(&mut new_bill.name);
+    let mut bill_name = String::new();
 
-    io::stdin().read_line(new_bill.amount);
+    println!("Enter bill name:");
+    io::stdin().read_line(&mut bill_name).expect("Failed to read the line");
+    new_bill.name = bill_name.trim().to_owned();
+
+    let mut bill_amount = String::new();
+
+    println!("Enter bill amount:");
+    io::stdin().read_line(&mut bill_amount).expect("Failed to read the line");
+    new_bill.amount = bill_amount.trim().parse().expect("Failed to read the line");
 
     bills.push(new_bill);
 
-    // bills
+    for bill in bills {
+
+        println!("bill name : {}, bill amount : {}", bill.name, bill.amount);
+        
+    }
 
 }
 
-fn user_input(menu_number: u32) -> Menu {
+fn user_input(menu_number: u32) {
 
     match menu_number {
-        1 => add_bill()
-    }
+        1 => add_bill(),
+        _ => println!("Err")
+    };
 
 }
 
 fn main() {
 
+    println!("This is menu :");
 
+    let mut selected_item = String::new();
+
+    io::stdin().read_line(&mut selected_item).expect("Error reading line");
+
+    // Parse the input into a u32
+    let parsed_number: Result<u32, _> = selected_item.trim().parse();
+
+    match parsed_number {
+        Ok(menu_number) => user_input(menu_number),
+        Err(_) => println!("Error parsing input as a number"),
+    }
 
 }
