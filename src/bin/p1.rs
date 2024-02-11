@@ -31,6 +31,16 @@
 
 use std::io;
 
+enum Menu {
+    AddBill,
+    ViewBill,
+    RemoveBill,
+    UpdateBill,
+    BillsTotal,
+    ShowMenu,
+    Exit
+}
+
 struct Bill {
     name : String,
     amount : f64
@@ -122,7 +132,7 @@ impl Bills {
     
 }
 
-fn user_input() -> u32 {
+fn user_input() -> Menu {
 
     let mut selected_item = String::new();
 
@@ -132,10 +142,21 @@ fn user_input() -> u32 {
     let parsed_number: Result<u32, _> = selected_item.trim().parse();
     
     match parsed_number {
+
         Ok(menu_number) => {
-
-            return menu_number;
-
+            match menu_number {
+                1 => Menu::AddBill,
+                2 => Menu::ViewBill,
+                3 => Menu::RemoveBill,
+                4 => Menu::UpdateBill,
+                5 => Menu::BillsTotal,
+                6 => Menu::ShowMenu,
+                7 => Menu::Exit,
+                _ => {
+                    println!(">> Menu number is wrong");
+                    user_input()
+                }
+            }
         },
         Err(_) => {
             println!(">> Menu number is wrong");
@@ -155,7 +176,7 @@ please select menu number
 2.View bills
 3.Remove bill
 4.Update bill
-5.Bill total
+5.Bills total
 
 6.Show Menu
 7.exit
@@ -165,6 +186,8 @@ please select menu number
 
 fn main() {
 
+    use Menu::*;
+
     let mut bills = Bills::new();
 
     show_menu();
@@ -172,7 +195,7 @@ fn main() {
     loop {
 
         match user_input() {
-            1 => {
+            AddBill => {
 
                 let mut bill_name = String::new();
 
@@ -192,14 +215,14 @@ fn main() {
                 println!("Press 6 for show menu");
 
             },
-            2 => {
+            ViewBill => {
 
                 bills.view_bills();
 
                 println!("Press 6 for show menu");
 
             },
-            3 => {
+            RemoveBill => {
 
                 println!("Print bill name :");
 
@@ -214,7 +237,7 @@ fn main() {
                 println!("Press 6 for show menu");
 
             },
-            4 => {
+            UpdateBill => {
 
                 println!("Print bill name :");
 
@@ -235,27 +258,22 @@ fn main() {
                 println!("Press 6 for show menu");
 
             },
-            5 => {
+            BillsTotal => {
 
                 bills.bills_total();
 
                 println!("Press 6 for show menu");
 
             }
-            6 => {
+            ShowMenu => {
 
                 show_menu();
 
             },
-            7 => {
+            Exit => {
 
                 println!("Good bay");
                 break;
-
-            },
-            _ => {
-
-                println!("Menu number is invalid");
 
             }
         }
