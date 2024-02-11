@@ -144,3 +144,8 @@
     -  The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple modules.
 - c. External Modules
     - The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple external modules.
+
+# Project 1 - Interactive bill manager
+
+- Create a command line bills/expenses manager that runs interactively. This mini project brings together many of the concepts learn thus far into a single application.
+- The user stories/requirements are split into stages. Fully implement each stage as a complete working program before making changes for the next stage. Leverage the compiler by using `cargo check --bin p1` when changing between stages to help identify adjustments that need to be made.

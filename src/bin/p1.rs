@@ -31,74 +31,237 @@
 
 use std::io;
 
-enum Menu {
-    AddBill(),
-    // ViewBill,
-    // RemoveBill,
-    // UpdateBill,
-    // BillTotal,
-    // Exit
-}
-
 struct Bill {
     name : String,
-    amount : i32
+    amount : f64
 }
 
-fn add_bill() {
+struct Bills {
+    bills : Vec<Bill>
+}
 
-    let mut bills: Vec<Bill> = vec![];
+impl Bills {
 
-    let mut new_bill = Bill {
-        name : "".to_owned(),
-        amount : 0
-    };
-
-    let mut bill_name = String::new();
-
-    println!("Enter bill name:");
-    io::stdin().read_line(&mut bill_name).expect("Failed to read the line");
-    new_bill.name = bill_name.trim().to_owned();
-
-    let mut bill_amount = String::new();
-
-    println!("Enter bill amount:");
-    io::stdin().read_line(&mut bill_amount).expect("Failed to read the line");
-    new_bill.amount = bill_amount.trim().parse().expect("Failed to read the line");
-
-    bills.push(new_bill);
-
-    for bill in bills {
-
-        println!("bill name : {}, bill amount : {}", bill.name, bill.amount);
+    fn new() -> Self {
+        Bills { bills : Vec::new()}
+    }
+    
+    fn add_bill(&mut self, name : String, amount : f64) {
         
+        let new_bill = Bill {
+            name,
+            amount
+        };
+
+        self.bills.push(new_bill);
+
+    }
+
+    fn view_bills (&self) {
+
+        println!("--------------");
+
+        for bill in &self.bills {
+    
+            println!("bill name : {}bill amount : {}", bill.name, bill.amount);
+            println!("--------------")
+            
+        }
+
+    }
+
+    fn remove_bills(&mut self, name : String) {
+
+        let check_exist = self.bills.iter().position(|item| item.name == name);
+
+        match check_exist {
+            Some(index) => {
+                self.bills.remove(index);
+            },
+            None => println!(">> Bill name dose not exist !")
+        }
+
+    }
+
+    fn update_bills(&mut self, bill_name : String, updated_amount : f64 ) {
+
+        let check_exist = self.bills.iter().position(|item| item.name == bill_name);
+
+        match check_exist {
+            Some(_index) => {
+
+                for bill in &mut self.bills {
+
+                    if bill.name == bill_name {
+
+                        bill.amount = updated_amount;
+
+                    }
+
+                }
+
+            },
+            None => println!(">> Bill name dose not exist !")
+        }
+
+    }
+
+    fn bills_total(&self) {
+
+        let mut total: f64 = 0.0;
+
+        for bill in &self.bills  {
+            
+            total = total + bill.amount;
+
+        };
+
+        println!("total amount of bills is : {}", total);
+
+    }
+    
+}
+
+fn user_input() -> u32 {
+
+    let mut selected_item = String::new();
+
+    io::stdin().read_line(&mut selected_item).expect(">> Error reading line");
+
+    // Parse the input into a u32
+    let parsed_number: Result<u32, _> = selected_item.trim().parse();
+    
+    match parsed_number {
+        Ok(menu_number) => {
+
+            return menu_number;
+
+        },
+        Err(_) => {
+            println!(">> Menu number is wrong");
+            user_input()
+        },
     }
 
 }
 
-fn user_input(menu_number: u32) {
+fn show_menu() {
 
-    match menu_number {
-        1 => add_bill(),
-        _ => println!("Err")
-    };
+    println!(r#"
+please select menu number
+
+== Manage Bills ==
+1.Add bill
+2.View bills
+3.Remove bill
+4.Update bill
+5.Bill total
+
+6.Show Menu
+7.exit
+    "#);
 
 }
 
 fn main() {
 
-    println!("This is menu :");
+    let mut bills = Bills::new();
 
-    let mut selected_item = String::new();
+    show_menu();
 
-    io::stdin().read_line(&mut selected_item).expect("Error reading line");
+    loop {
 
-    // Parse the input into a u32
-    let parsed_number: Result<u32, _> = selected_item.trim().parse();
+        match user_input() {
+            1 => {
 
-    match parsed_number {
-        Ok(menu_number) => user_input(menu_number),
-        Err(_) => println!("Error parsing input as a number"),
+                let mut bill_name = String::new();
+
+                println!("Enter bill name:");
+                io::stdin().read_line(&mut bill_name).expect("Failed to read the line");
+            
+                let mut bill_amount = String::new();
+            
+                println!("Enter bill amount:");
+                io::stdin().read_line(&mut bill_amount).expect("Failed to read the line");
+                let amount = bill_amount.trim().parse::<f64>().unwrap_or(0.0);
+
+                bills.add_bill(bill_name, amount);
+
+                bills.view_bills();
+
+                println!("Press 6 for show menu");
+
+            },
+            2 => {
+
+                bills.view_bills();
+
+                println!("Press 6 for show menu");
+
+            },
+            3 => {
+
+                println!("Print bill name :");
+
+                let mut bill_name = String::new();
+
+                io::stdin().read_line(&mut bill_name).expect("Failed to read the line");
+
+                bills.remove_bills(bill_name);
+
+                bills.view_bills();
+
+                println!("Press 6 for show menu");
+
+            },
+            4 => {
+
+                println!("Print bill name :");
+
+                let mut bill_name = String::new();
+
+                io::stdin().read_line(&mut bill_name).expect("Failed to read the line");
+
+                let mut bill_amount = String::new();
+
+                println!("Enter new bill amount:");
+                io::stdin().read_line(&mut bill_amount).expect("Failed to read the line");
+                let amount = bill_amount.trim().parse::<f64>().unwrap_or(0.0);
+
+                bills.update_bills(bill_name, amount);
+
+                bills.view_bills();
+
+                println!("Press 6 for show menu");
+
+            },
+            5 => {
+
+                bills.bills_total();
+
+                println!("Press 6 for show menu");
+
+            }
+            6 => {
+
+                show_menu();
+
+            },
+            7 => {
+
+                println!("Good bay");
+                break;
+
+            },
+            _ => {
+
+                println!("Menu number is invalid");
+
+            }
+        }
+        
     }
+
+
 
 }
