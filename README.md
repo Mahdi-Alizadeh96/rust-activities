@@ -136,6 +136,13 @@
 - Filter the data to only include values > 10.
 - Print out each element using a for loop.
 
+### Activity 25 - Traits
+
+- Calculate the perimeter of a square and triangle
+    - The perimeter of a square is the length of any side*4.
+    - The perimeter of a triangle is a+b+c where each variable represents the length of a side.
+- Print out the perimeter of the shapes
+
 ### Activity 26 - Modules
 
 - a. External crates
