@@ -152,6 +152,12 @@
 - c. External Modules
     - The existing program is complete, but all the code exists in a single module. This code can benefit from being organized into multiple external modules.
 
+### Activity 29 - Generics & Functions
+
+- Create a function that accepts the Priority trait as a generic parameter
+    - The function should print out the guest and their priority
+- Use the function with at least two different guests
+
 # Project 1 - Interactive bill manager
 
 - Create a command line bills/expenses manager that runs interactively. This mini project brings together many of the concepts learn thus far into a single application.
